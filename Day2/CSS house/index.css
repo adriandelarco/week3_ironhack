@@ -1,0 +1,55 @@
+body {
+	background: #3877CC
+}
+
+.world{
+	position: absolute;
+	top:0px;
+	width: 100%;
+	height: 70%;
+}
+.ground {
+	width: 100%;
+	height: 30%;
+	position: absolute;
+	bottom: 0px;
+	background: rgba(204,255,51,1);
+	background: -moz-linear-gradient(top, rgba(204,255,51,1) 0%, rgba(104,191,23,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,255,51,1)), color-stop(100%, rgba(104,191,23,1)));
+	background: -webkit-linear-gradient(top, rgba(204,255,51,1) 0%, rgba(104,191,23,1) 100%);
+	background: -o-linear-gradient(top, rgba(204,255,51,1) 0%, rgba(104,191,23,1) 100%);
+	background: -ms-linear-gradient(top, rgba(204,255,51,1) 0%, rgba(104,191,23,1) 100%);
+	background: linear-gradient(to bottom, rgba(204,255,51,1) 0%, rgba(104,191,23,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccff33', endColorstr='#68bf17', GradientType=0 );
+}
+
+img {
+}
+
+.house {
+	position: absolute;
+	left: 50%;
+	bottom: -10%;
+	height: 90% !important;
+}
+
+.tree {
+	position: absolute;
+	left: 10%;
+	bottom: -10%;
+	height: 90% !important;
+}
+
+.dog {
+	position: absolute;
+	left: 45%;
+	bottom: 30%;
+	height: 30% !important;
+}
+
+.sun {
+	position: absolute;
+	left: 85%;
+	bottom: 70%;
+	height: 25% !important;
+}

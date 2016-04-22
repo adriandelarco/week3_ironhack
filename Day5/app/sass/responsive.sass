@@ -1,0 +1,181 @@
+body
+	background: #F5F8FA
+a, a:hover
+	color: #009999
+.lightgrey
+	color: #8899a6
+.darkgrey
+	color: #292f33
+@media (min-width: 1200px) 
+	.content.container
+		width: 1200px
+		padding: 0px 
+	.col-md-6, .col-md-3
+		padding: 0px 6px
+
+.topbar
+	background: #fff
+	height: 46px
+	.nav-tabs
+		display: flex
+
+.toptab:active, .toptab:hover
+	@extend .tab:active
+	color: #1da1f2
+	border-bottom: 4px solid #1da1f2!important
+.toptab
+	@extend .lightgrey
+	height: 46px
+	width: auto
+	.toptabtitle	
+		white-space: nowrap!important
+		margin-left: 10px
+		float: left
+		margin-left: 3px
+		margin-top: 17px
+		color: inherit
+		display: block
+		font-size: 13px
+		font-weight: 500
+		height: 46px
+		line-height: 1
+		padding: 0 14px 0 4px
+
+.toptab::before
+	content: ""
+	background: url('public/img/icon.png')
+	width: 10px
+	height: 10px
+	display:block
+	position: absolute
+
+.backgroundpic
+	width: 1846px
+	height: 550px
+	overflow: hidden
+	img
+		width: 100%
+.secondarybar
+	background-color: #fff
+	border: 1px solid #e1e8ed
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	height: 60px
+	.nav-tabs
+		border: 0
+
+#floatingthumbnail
+	top: -190px
+	left: 0px
+	position: absolute
+	width: 210px
+	z-index: 3
+
+.profileinfo
+	.profilecard
+		margin: 30px 0 20px 0
+.profiledata
+	.glyphicon
+		margin: 0 7px 0 3px
+.profileportfolio
+	.glyphicon
+		margin: 0 7px 0 3px
+	img
+		border-radius: 4px
+.tweet
+	border-bottom: 1px solid grey
+.thumbpic
+	margin: 3px 1px
+	width: 83px
+	height: 83px
+	display: inline-block
+
+.greypanel
+	background-color: #e1e8ed
+	border: 0
+	button
+		background: #1da1f2
+		border: 0
+		width: 100%
+		height: 40px
+		font-size: 16px
+.widgets
+	.panel-body
+		padding: 10px!important
+.widgettitle
+	@extend .lightgrey
+	margin-top: 0px!important
+
+.recommendeduser
+	margin-bottom: 10px
+	img
+		border-radius: 4px
+		width: 36px
+		height: 36px
+	h5, small
+		font-size: 13px
+.recommendeduser:last-of-type
+	margin-bottom: 0px
+
+.trends
+	ul
+		margin-bottom: 0px!important
+
+.panel-default
+	margin: 10px 0
+.panel-heading
+	background-color: #fff!important
+	height: 47px!important
+#panel-title-list
+	padding: 0px
+	li
+		font-weight: 500
+		display: inline-block
+		color: #ccd6dd
+		font-size: 18px
+		line-height: 1
+		padding: 5px 15px
+
+.media-footer 
+	line-height: 1
+	margin-bottom: 2px
+	margin-top: 10px
+	.glyphicon
+		width: 80px
+		display:inline-block
+		color: #aab8c2
+		span
+			font-family: sans-serif
+			padding: 0 0 0 5px
+			font-size: 12px
+			font-weight: bold
+
+.tab:active, .tab:hover
+	text-decoration: none
+	border-bottom: 4px solid rgb(0, 153, 153)
+	transition: all 0.15s ease-in-out 0s
+.tab
+	float: left
+	height: 60px
+	padding: 11px 15px 7px
+	text-align: center
+	.tabnumber
+		font-size: 18px
+		color: #009999
+	.tabtitle
+		@extend .lightgrey
+		font-size: 11px
+		letter-spacing: .02em
+		text-transform: uppercase
+		display: block
+
+.pagefooter
+	@extend .lightgrey
+	font-size: 12px
+	ul
+		list-style: none
+		display: inline
+		padding: 0
+		li
+			display: inline-block
+

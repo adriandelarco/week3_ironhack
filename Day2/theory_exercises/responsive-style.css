@@ -1,0 +1,18 @@
+.container{
+	max-width: 940px;
+	margin: 0 auto;
+}
+.row {
+	margin-left: -20px;
+}
+[class*="span"] {
+	display: inline;
+	float: left;
+		border: 1px dotted grey;
+	margin: 1%;
+	padding: 2%;
+	box-sizing: border-box;
+}
+.span-one-third{
+	width: 30%;
+}
