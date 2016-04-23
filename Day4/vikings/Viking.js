@@ -55,8 +55,10 @@ Arena.prototype.vikings_battle = function(vikings,saxons){
 	console.log ("\nNEW BATTLE BEGIN: Number of rounds: " + rounds + "\n")
 	var self = this;
 	for (var i = 0; i < rounds; i++) {
-		sleep(1000)
-		self.round(vikings, saxons, i)
+		if (saxons.length > 0 && vikings.length > 0) {
+			sleep(1000)
+			self.round(vikings, saxons, i)
+		} else {break;}
 	};
 	if (saxons.length == 0){
 		console.log("BATTLE FINISHED. Vikings win! All the saxons has died.");
@@ -68,39 +70,37 @@ Arena.prototype.vikings_battle = function(vikings,saxons){
 	}
 };
 Arena.prototype.round = function(vikings, saxons, i){
-	if (saxons.length > 0 && vikings.length > 0) {
-		var dead_saxons = 0
-		var dead_vikings = 0
-		process.stdout.write('\033c');
-		console.log ("\nROUND NUMBER: " + (i+1) + "\n")
-		var attacked_saxons = []
-		vikings.forEach (function (viking, viking_index) {
-			if (saxons.length > 0) {
+	var dead_saxons = 0
+	var dead_vikings = 0
+	process.stdout.write('\033c');
+	console.log ("\nROUND NUMBER: " + (i+1) + "\n")
+	var attacked_saxons = []
+	vikings.forEach (function (viking, viking_index) {
+		if (saxons.length > 0) {
+			var rnd_saxon_index = (Math.floor(Math.random() * (saxons.length - 0)) + 0).toFixed()
+			var rnd_saxon = saxons[rnd_saxon_index];
+			while (attacked_saxons.indexOf(rnd_saxon) != -1 ) {
 				var rnd_saxon_index = (Math.floor(Math.random() * (saxons.length - 0)) + 0).toFixed()
 				var rnd_saxon = saxons[rnd_saxon_index];
-				while (attacked_saxons.indexOf(rnd_saxon) != -1 ) {
-					var rnd_saxon_index = (Math.floor(Math.random() * (saxons.length - 0)) + 0).toFixed()
-					var rnd_saxon = saxons[rnd_saxon_index];
-				}
-				attacked_saxons.push(rnd_saxon);
-				viking.attack(rnd_saxon);
-				rnd_saxon.attack(viking);
-				if (rnd_saxon.health < 0 ) { 
-					++dead_saxons
-					saxons.splice(rnd_saxon_index, 1)
-				} else if (viking.health < 0 ){
-					++dead_vikings
-					vikings.splice(viking_index, 1)
-				} 
 			}
-		});
-		console.log(dead_saxons + " saxons has died.")
-		console.log(dead_vikings + " vikings has died.")
-		console.log("Theare now " + saxons.length + " saxons.")
-		console.log("Theare now " + vikings.length + " vikings.\n\n")
-		this.print_fighters(vikings,"viking")
-		this.print_fighters(saxons,"saxon")
-	} 
+			attacked_saxons.push(rnd_saxon);
+			viking.attack(rnd_saxon);
+			rnd_saxon.attack(viking);
+			if (rnd_saxon.health < 0 ) { 
+				++dead_saxons
+				saxons.splice(rnd_saxon_index, 1)
+			} else if (viking.health < 0 ){
+				++dead_vikings
+				vikings.splice(viking_index, 1)
+			} 
+		}
+	});
+	console.log(dead_saxons + " saxons has died.")
+	console.log(dead_vikings + " vikings has died.")
+	console.log("Theare now " + saxons.length + " saxons.")
+	console.log("Theare now " + vikings.length + " vikings.\n\n")
+	this.print_fighters(vikings,"viking")
+	this.print_fighters(saxons,"saxon")
 }
 Arena.prototype.print_fighters = function(fighters, type_of_fighters){
 	var drawing_fighters = "", symbol =""
@@ -157,7 +157,7 @@ for (var i = 0; i < 100; i++) {
 };
 
 var saxons = []
-for (var i = 0; i < 500; i++) {
+for (var i = 0; i < 370; i++) {
 	saxon = new Saxon();
 	saxons.push(saxon)
 };
